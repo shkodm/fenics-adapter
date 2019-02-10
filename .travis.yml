@@ -14,9 +14,13 @@ install:
   - $PY --version 
   - $PY -m pip --version 
   - $PY -m pip install --upgrade pip
-  - $PY -m pip --version
+  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then export PETSC_ARCH=arch-darwin-c-debug; else export PETSC_ARCH=arch-linux2-c-debug; fi
+  - $PY -m pip --vesion 
   - $PY -m pip install scipy 
+  - $PY -m pip install setuptools
   # for linux - pip install scipy
+
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install open-mpi; fi
 
 script: 
   - python setup.py test 
