@@ -6,12 +6,14 @@ matrix:
   # windows tests 
   - os: windows 
     language: bash 
+    env: PY=py
     python: "3.5"
     before_install: choco install python --version 3.5.4 
 
 install:  
-  - python -m pip install --upgrade pip setuptools
+  - python -m pip install --upgrade pip
   - python -m pip install scipy 
+  - python -m pip install -U setuptools
 
 script: 
   - python setup.py test 
