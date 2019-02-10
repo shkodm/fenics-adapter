@@ -1,9 +1,20 @@
-sudo: true
-dist: trusty 
-language: python
-python: 
-  - "3.5"
-install: 
-  - pip install scipy
+matrix: 
+  include: 
+  - os: linux  
+    language: python 
+    python: "3.5" 
+  # windows tests 
+  - os: windows 
+    language: bash 
+    env: PY=py
+    python: "3.5"
+    before_install: choco install python --version 3.5.0 
+
+install:  
+  - $PY --version 
+  - $PY -m pip --version 
+  - $PY -m pip install scipy 
+  # for linux - pip install scipy
+
 script: 
   - python setup.py test 
