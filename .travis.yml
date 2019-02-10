@@ -8,7 +8,7 @@ matrix:
     language: bash 
     env: PY=py
     python: "3.5"
-    before_install: choco install python --version 3.5
+    before_install: choco install python --version 3.5.4 
 
 install:  
   - $PY --version 
