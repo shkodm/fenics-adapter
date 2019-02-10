@@ -14,7 +14,7 @@ install:
   - $PY --version 
   - $PY -m pip --version 
   - $PY -m pip install --upgrade pip
-  - $PY -m pip --vesion 
+  - $PY -m pip --version
   - $PY -m pip install scipy 
   # for linux - pip install scipy
 
