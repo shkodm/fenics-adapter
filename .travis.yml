@@ -11,9 +11,8 @@ matrix:
     before_install: choco install python --version 3.5.4 
 
 install:  
-  - python -m pip install --upgrade pip
-  - python -m pip install scipy 
-  - python -m pip install -U setuptools
+  - $PY -m pip install scipy 
+  - $PY -m pip install --upgrade setuptools
 
 script: 
   - python setup.py test 
