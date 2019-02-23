@@ -10,11 +10,10 @@ matrix:
   - os: windows 
     # does not support python 
     language: bash 
-    env: PY=python
+    env: PY=py
     python: "3.5"
     before_install: choco install python --version 3.5.4 
     install: 
-      - $PY -m pip --version 
       - $PY -m pip install --upgrade pip
       - $PY -m pip install scipy 
       - $PY -m pip install --upgrade setuptools
