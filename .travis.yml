@@ -14,6 +14,7 @@ matrix:
     python: "3.5"
     before_install: choco install python --version 3.5.4 
     install: 
+      - $PY -m pip --version 
       - $PY -m pip install --upgrade pip
       - $PY -m pip install scipy 
       - $PY -m pip install --upgrade setuptools
@@ -21,7 +22,6 @@ matrix:
   - os: osx
     # does not support python
     language: generic 
-    python: "3.5"
     env: PY=python3
     install: 
       - pip3 install scipy
