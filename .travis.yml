@@ -3,7 +3,7 @@ matrix:
   - os: linux  
     language: python 
     python: "3.5" 
-    env: PY=py
+    env: PY=python
     install: 
     - pip install scipy
   # windows tests 
@@ -19,6 +19,12 @@ matrix:
       - $PY -m pip install scipy 
       - $PY -m pip install --upgrade setuptools
 
+  - os: osx
+    # does not support python
+    language: generic 
+    install: 
+      - pip3 install scipy
+      - python --version
 
 script: 
   - $PY setup.py test 
