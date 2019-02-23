@@ -6,7 +6,6 @@ matrix:
     env: PY=python
     install: 
     - pip install scipy
-  # windows tests 
   - os: windows 
     # does not support python 
     language: bash 
@@ -24,7 +23,6 @@ matrix:
     env: PY=python3
     install: 
       - pip3 install scipy
-      - python3 --version
 
 script: 
   - $PY setup.py test 
