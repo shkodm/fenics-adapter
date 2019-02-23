@@ -25,6 +25,7 @@ matrix:
     install: 
       - pip3 install scipy
       - python --version
+      - python3 --version
 
 script: 
   - $PY setup.py test 
