@@ -22,9 +22,9 @@ matrix:
   - os: osx
     # does not support python
     language: generic 
+    env: PY=python3
     install: 
       - pip3 install scipy
-      - python --version
       - python3 --version
 
 script: 
